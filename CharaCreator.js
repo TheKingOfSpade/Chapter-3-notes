@@ -47,14 +47,26 @@ function createChar(character, list){
     character.wisdom = rollStat(diceRolled);
     console.log("Rolling CHA");
     character.charisma = rollStat(diceRolled);
-    console.log(character)
+    console.log("Rolling HGT");
+    character.height = rollStat(diceRolled);
+    console.log("Rolling AGE");
+    character.age = rollStat(diceRolled);
+    console.log("Rolling KID");
+    character.kids = rollStat(diceRolled);
+    displayChar(character);
 }
 
-function displayChara(chara){
-    console.log(`Name: ${chara.strength}`);
-    console.log(`Name: ${chara.dexerity}`);
-    console.log(`Name: ${chara.constitution}`);
-    console.log(`Name: ${chara.intelligence}`);
-    console.log(`Name: ${chara.wisdom}`);
-    console.log(`Name: ${chara.charisma}`);
+function displayChar(char){
+    console.log('-----------------------');
+    console.log(`Name: ${char.name}`);
+    console.log(`STR: ${char.strength}`);
+    console.log(`DEX: ${char.dexerity}`);
+    console.log(`CON: ${char.constitution}`);
+    console.log(`INT: ${char.intelligence}`);
+    console.log(`WIS: ${char.wisdom}`);
+    console.log(`CHA: ${char.charisma}`);
+    console.log(`HGT: ${char.height}`);
+    console.log(`AGE: ${char.age}`);
+    console.log(`KID: ${char.kids}`);
+    console.log('-------------------------');
 }
