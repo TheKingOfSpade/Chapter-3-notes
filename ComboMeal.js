@@ -1,29 +1,40 @@
 const readLine = require(`readline-sync`);
-//burger
-let answer = readLine.question("Welcome to Rally's. What kind of burger would you like? We have chicken for $5.25, beef for $6.25, or tofu for $5.75.: ");
-while (answer != "chicken" && answer != "beef" && answer != "tofu"){
-    console.log("Can you repeat that please?:");
-    answer = readLine.question("chicken, beef, or tofu?: ");
-    return(`${answer}`)
 
-}
-
-//beverage
-let answer3 = readLine.question("Would you like a beverage with it?: ");
-while (answer3 != "yes" && answer3 != "no"){
+let answer = readLine.question("What type of burger would you like chicken $5.25, beef $6.25, or tofu $5.75?: ");
+while (answer != "chicken " && answer != "beef" && answer != "tofu"){
     console.log("invalid choice");
-    answer3 = readLine.question("Enter y or n: ");
+    answer = readLine.question("Repeat it? ");
+    while (answer != "sure" && answer != "yes"){
+        console.log("invalid choice");
+    }
 }
-let answer4 = readLine.question("What flavor would you like? We have pepsi and water.:");
-while (answer4 != "pepsi" && answer4 != "water"){
-    console.log("Thats not a flavor. Can you choose another one?");
-    answer4 = readLine.question("-----" +
-        "Choose pepsi: " +
-        "-----");
+let answer2 = readLine.question("Would you like a beverage with it or no?\nsmall $1.00, medium $1.75, large $2.25: ");
+while (answer2 != "yes" && answer2 != "no" && answer2 != "small" && answer2 != "medium" && answer2 != "large"){
+    console.log("invalid choice");
+    answer2 = readLine.question("Repeat it?");
+    while (answer2 != "no" && answer2 != "yes" && answer2 != "small" && answer2 != "medium" && answer2 != "large");
+} if (answer2 == "no"){
+    console.log("No drink with your food.");}
+if (answer2 == "yes" && answer2 == "small" && answer2 == "medium" && answer2 == "large"){
+    console.log("Drinks with your food.")
 }
-let annswer5 = readLine.question("Would you like fries with that?: ");
-while (annswer5 != "yes" && annswer5 != "no" {
-    console.log("Can you repeat that please?:");
-    annswer5 = readLine.question("small, medium, or large?: ");
-    return (`${annswer5}`)
+
+let answer3 = readLine.question("Would you like a side of fries with it?: ");
+while (answer3 != "yes" && answer3 != "no"){
+    console.log("invalid choice");}
+if (answer3 == "no"){
+    console.log("No Fries")
 }
+if(answer3 == "yes"){
+    answer3 = readLine.question("What size?(Small: $3.25, Medium: $5, Large: $6.50): ");
+    console.log(`${answer3} fries.`)
+}
+
+let number4 = Number(readLine.question("How many packet of ketch up do you want or you dont want any?: "));
+if (number4 == "no"){
+    console.log(`${number4} no ketchup packets for you. (Cost 0)`)
+}
+if (number4 == "yes"){
+    let epic = number4 * 0.25;
+    console.log(`${number4} ketchup packets for you. (Cost ${epic})`);
+    console.log(`${answer} burger, ${answer2} drink, ${answer3} Fries, ${number4} Packets of ketchup. (Cost ${epic})`);}
